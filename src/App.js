@@ -14,6 +14,7 @@ function App() {
       setCurrentItem("");
     }
   };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -31,7 +32,7 @@ function App() {
             </button>
           </div>
           <div className="itemcon">
-            {itemList.map((itemObj) => {
+            {itemList.map((itemObj,i) => {
               return (
                 <List key={itemObj.key}
                 itemkey={itemObj.key}

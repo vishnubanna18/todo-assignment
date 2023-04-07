@@ -16,13 +16,14 @@ function List(props) {
 
     if (checked[0] !== undefined) {
       const index = props.checkItemList.indexOf(props.item);
-      console.log(props.item, index);
-      props.checkItemList.splice(index, 1);
-      let b = props.checkItemList;
-      console.log(b);
-
+      // props.checkItemList.slice(index, 1);
+      let b=props.checkItemList.filter((i)=>{
+        return i!==props.item
+      })
       props.updateCheckItemList(b);
-    } else props.updateCheckItemList([...props.checkItemList, props.item]);
+    } else {
+      props.updateCheckItemList([...props.checkItemList, props.item]);
+    }
   };
   let checked = props.checkItemList.filter((element) => {
     return element === props.item;
